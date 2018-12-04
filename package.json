@@ -1,0 +1,33 @@
+{
+  "name": "nextportfolio",
+  "version": "1.0.0",
+  "description": "Online portfolio using Next.js for server side rendering, React, Express, and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schmidgallm/nextPortfolio.git"
+  },
+  "keywords": [
+    "Next.js",
+    "React",
+    "Express",
+    "Node.js",
+    "MongoDB"
+  ],
+  "author": "Michael Schmidgall",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/schmidgallm/nextPortfolio/issues"
+  },
+  "homepage": "https://github.com/schmidgallm/nextPortfolio#readme",
+  "dependencies": {
+    "next": "^7.0.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  }
+}
