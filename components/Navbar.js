@@ -1,11 +1,9 @@
-import Link from 'next/link';
-
 const Navbar = () => (
 	<div className="bs-component">
 		<nav className="navbar navbar-expand-lg navbar-light bg-light">
-			<Link href="/">
-				<a className="navbar-brand">Michael Schmidgall</a>
-			</Link>
+			<a className="navbar-brand" href="#">
+				Michael Schmidgall
+			</a>
 			<button
 				className="navbar-toggler"
 				type="button"
@@ -20,24 +18,30 @@ const Navbar = () => (
 
 			<div className="collapse navbar-collapse" id="navbarColor01">
 				<ul className="navbar-nav mr-auto">
-					<li className="nav-item">
-						<Link href="/about">
-							<a className="nav-link">About</a>
-						</Link>
+					<li className="nav-item active">
+						<a className="nav-link" href="#">
+							Home <span className="sr-only">(current)</span>
+						</a>
 					</li>
 					<li className="nav-item">
-						<Link href="/contact">
-							<a className="nav-link">Contact</a>
-						</Link>
+						<a className="nav-link" href="#">
+							About
+						</a>
 					</li>
 					<li className="nav-item">
-						<Link href="portfolio">
-							<a className="nav-link">Portfolio</a>
-						</Link>
+						<a className="nav-link" href="#">
+							Contact
+						</a>
+					</li>
+					<li className="nav-item">
+						<a className="nav-link" href="#">
+							Portfolio
+						</a>
 					</li>
 				</ul>
 			</div>
 		</nav>
+
 		<style jsx>{`
 			.navbar {
 				border: none;
