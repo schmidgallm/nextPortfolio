@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const TextCopy = () => (
 	<div className="container text-center">
 		<div className="text-content">
@@ -7,7 +9,9 @@ const TextCopy = () => (
 				sed nobis voluptatem tempore saepe reprehenderit vitae voluptates repudiandae at quisquam molestiae
 				impedit temporibus dolorum nemo odit, deserunt dicta minus cumque! Esse nulla eveniet suscipit in!
 			</p>
-			<button className="btn btn-primary mt-2">More about me</button>
+			<Link href="/about">
+				<a className="btn btn-primary mt-2">More about me</a>
+			</Link>
 		</div>
 
 		<style jsx>{`
