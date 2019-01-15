@@ -15,6 +15,9 @@ const ContactsSchema = new Schema({
 		],
 		required: true
 	},
+	company: {
+		type: String
+	},
 	email: {
 		type: String,
 		required: true

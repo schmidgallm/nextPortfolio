@@ -4,18 +4,21 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "node server.js",
+		"dev": "nodemon server.js",
 		"build": "next build",
 		"start": "NODE_ENV=production node server.js"
 	},
 	"author": "Michael Schmidgall",
 	"license": "MIT",
 	"dependencies": {
+		"axios": "^0.18.0",
 		"body-parser": "^1.18.3",
 		"express": "^4.16.4",
 		"isomorphic-unfetch": "^3.0.0",
 		"mongoose": "^5.3.15",
 		"next": "^7.0.2",
+		"next-images": "^1.0.3",
+		"npm": "^6.4.1",
 		"path": "^0.12.7",
 		"react": "^16.6.3",
 		"react-dom": "^16.6.3"

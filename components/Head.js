@@ -8,6 +8,12 @@ export default () => (
 			<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			<meta httpEquiv="X-UA-Compatible" content="ie=edge" />
 			<meta charSet="UTF-8" />
+			<link
+				rel="stylesheet"
+				href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+				integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+				crossOrigin="anonymous"
+			/>
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
 			<link
 				rel="stylesheet"

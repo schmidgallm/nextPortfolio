@@ -1,5 +1,5 @@
 const TextCopy = () => (
-	<div className="container text-center mt-5">
+	<div className="container text-center">
 		<div className="text-content">
 			<h2>hello there</h2>
 			<p>
@@ -7,16 +7,23 @@ const TextCopy = () => (
 				sed nobis voluptatem tempore saepe reprehenderit vitae voluptates repudiandae at quisquam molestiae
 				impedit temporibus dolorum nemo odit, deserunt dicta minus cumque! Esse nulla eveniet suscipit in!
 			</p>
+			<button className="btn btn-primary mt-2">More about me</button>
 		</div>
 
 		<style jsx>{`
 			.text-content {
+				background-color: whitesmoke;
 				box-sizing: border-box;
-				padding: 7vh 0;
+				padding: 20vh 0;
+				margin-top: 10vh;
 			}
 			h2 {
 				display: inline-block;
 				border-bottom: 1px solid #9b8650;
+			}
+			p {
+				width: 75%;
+				margin: 30px auto;
 			}
 		`}</style>
 	</div>

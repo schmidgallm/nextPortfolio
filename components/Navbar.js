@@ -1,9 +1,11 @@
+import Link from 'next/link';
+
 const Navbar = () => (
 	<div className="bs-component">
 		<nav className="navbar navbar-expand-lg navbar-light bg-light">
-			<a className="navbar-brand" href="#">
-				Michael Schmidgall
-			</a>
+			<Link href="/">
+				<a className="navbar-brand">Michael Schmidgall</a>
+			</Link>
 			<button
 				className="navbar-toggler"
 				type="button"
@@ -19,24 +21,26 @@ const Navbar = () => (
 			<div className="collapse navbar-collapse" id="navbarColor01">
 				<ul className="navbar-nav mr-auto">
 					<li className="nav-item active">
-						<a className="nav-link" href="#">
-							Home <span className="sr-only">(current)</span>
-						</a>
+						<Link href="/">
+							<a className="nav-link">
+								Home <span className="sr-only">(current)</span>
+							</a>
+						</Link>
 					</li>
 					<li className="nav-item">
-						<a className="nav-link" href="#">
-							About
-						</a>
+						<Link href="/about">
+							<a className="nav-link">About</a>
+						</Link>
 					</li>
 					<li className="nav-item">
-						<a className="nav-link" href="#">
-							Contact
-						</a>
+						<Link href="/contact">
+							<a className="nav-link">Contact</a>
+						</Link>
 					</li>
 					<li className="nav-item">
-						<a className="nav-link" href="#">
-							Portfolio
-						</a>
+						<Link href="/portfolio">
+							<a className="nav-link">Portfolio</a>
+						</Link>
 					</li>
 				</ul>
 			</div>
@@ -45,6 +49,14 @@ const Navbar = () => (
 		<style jsx>{`
 			.navbar {
 				border: none;
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 1;
+				width: 100%;
+			}
+			.navbar-brand {
+				color: #9b8650;
 			}
 		`}</style>
 	</div>

@@ -11,10 +11,10 @@ export default () => (
 	<Layout>
 		<View>
 			<Hero />
-			<TextCopy />
+			<CardList />
 		</View>
 		<View>
-			<CardList />
+			<TextCopy />
 		</View>
 		<View>
 			<Collaboration />

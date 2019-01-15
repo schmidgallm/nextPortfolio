@@ -2,14 +2,17 @@ const Hero = () => (
 	<div className="hero-bg">
 		<div className="hero-content">
 			<h1>Michael Schmidgall</h1>
-			<p>Developer. Mentor. Buisness Intelligent</p>
-			<button className="btn btn-primary">Contact Me</button>
+			<p className="lead">Developer. Mentor. Ethical Programmer</p>
+			<hr />
+			<a href="#contact-me" className="btn btn-primary">
+				Contact Me
+			</a>
 		</div>
 
 		<style jsx>{`
 			.hero-bg {
 				width: 100%;
-				height: 60vh;
+				height: 100vh;
 				background-image: url('/static/hero_bg.jpeg');
 				background-size: cover;
 				background-position: center;
@@ -26,10 +29,14 @@ const Hero = () => (
 			h1,
 			p {
 				color: #fff;
+				text-shadow: 2px 2px 2px #000;
 			}
 			h1 {
 				width: 100%;
 				font-size: 3em;
+			}
+			hr {
+				background-color: #fff;
 			}
 			.btn {
 				background-color: #9b8650;

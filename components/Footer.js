@@ -1,20 +1,35 @@
 const Footer = () => (
 	<div className="container-fluid footer bg-primary mt-4 text-center">
 		<div className="row">
-			<div className="col-lg-6 col-md-6 col-sm-12">
+			<div className="col-12">
+				<div className="footer-copy-position">
+					<p className="lead">Michael Schmidgall</p>
+					<div className="icons">
+						<a className="icon" href="https://github.com/schmidgallm" target="_blank">
+							<span>
+								<i className="fa fa-github" />
+							</span>
+						</a>
+						<a className="icon" href="https://www.linkedin.com/in/michael-schmidgall/" target="_blank">
+							<span>
+								<i className="fa fa-linkedin-in" />
+							</span>
+						</a>
+						<a className="icon" href="mailto:schmidgallm.10@gmail.com">
+							<span>
+								<i className="fa fa-envelope-square" />
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div className="col-12 my-5">
 				<div className="img-div">
 					<img
 						src="/static/thumb_portrait.png"
 						alt="portrait michael schmidgall"
 						className="img-fluid img-responsive"
 					/>
-				</div>
-			</div>
-			<div className="col-lg-6 col-md-6 col-sm-12 footer-copy">
-				<div className="footer-copy-position">
-					<p>schmidgallm.10@gmail.com</p>
-					<p>linked/linked</p>
-					<p>github/github</p>
 				</div>
 			</div>
 		</div>
@@ -33,7 +48,7 @@ const Footer = () => (
 			.img-div {
 				border-radius: 50%;
 				overflow: hidden;
-				width: 50%;
+				width: 10%;
 				margin: 0 auto;
 			}
 			.footer-copy {
@@ -41,15 +56,38 @@ const Footer = () => (
 				flex-direction: column;
 				justify-content: center;
 			}
-			p {
-				flex: 1;
+			.lead {
+				color: #fff;
+				font-size: 30px;
 			}
 			h2 {
 				color: #fff;
 			}
+			i {
+				color: #9b8650;
+				font-size: 50px;
+			}
+			a {
+				margin: 0 5px;
+			}
+			.icons {
+				margin: 0 auto;
+			}
+			.icon {
+				margin: 0 10px;
+			}
+			.icon i:hover {
+				color: #837144;
+			}
 			@media all and (max-width: 770px) {
-				.footer-copy {
-					margin-top: 50px;
+				.img-div {
+					float: none;
+				}
+				.footer-copy-position {
+					text-align: center;
+				}
+				.icons {
+					margin: 0 auto;
 				}
 			}
 		`}</style>

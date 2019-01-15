@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import API from '../utils/API';
 
 class Contact extends Component {
 	state = {
 		name: '',
+		company: '',
 		email: '',
 		message: ''
 	};
@@ -16,8 +18,10 @@ class Contact extends Component {
 
 	// submit form to database
 	handleSubmit = (e) => {
+		// prevent form from submitting
 		e.preventDefault();
-		console.log('hello');
+		console.log(this.state);
+		API.postContact(this.state);
 
 		// show success message if message successfully sent
 		document.querySelector('#success-message').style.display = 'block';
@@ -33,7 +37,7 @@ class Contact extends Component {
 
 	render() {
 		return (
-			<div className="container my-5">
+			<div className="container" id="contact-me">
 				<div className="text-content text-center">
 					<h2>Contact Me</h2>
 				</div>
@@ -41,34 +45,43 @@ class Contact extends Component {
 					<div className="col-lg-12">
 						<div className="bs-component">
 							<form>
-								<h4 id="success-message">Message Sent</h4>
+								<h3 id="success-message">Message Sent</h3>
 								<fieldset>
 									<div className="form-group">
 										<label htmlFor="name">Name</label>
 										<input
+											name="name"
 											type="text"
 											className="form-control"
 											id="name"
 											placeholder="Enter name"
+											onChange={this.handleInputChange}
+											value={this.state.name}
 										/>
 									</div>
 									<div className="form-group">
 										<label htmlFor="company">Company</label>
 										<input
+											name="company"
 											type="text"
 											className="form-control"
 											id="company"
 											placeholder="Enter Company"
+											onChange={this.handleInputChange}
+											value={this.state.company}
 										/>
 									</div>
 									<div className="form-group">
 										<label htmlFor="email">Email address</label>
 										<input
+											name="email"
 											type="email"
 											className="form-control"
 											id="email"
 											aria-describedby="emailHelp"
 											placeholder="Enter email"
+											onChange={this.handleInputChange}
+											value={this.state.email}
 										/>
 										<small id="emailHelp" className="form-text text-muted">
 											I will never share your email with anyone else.
@@ -76,7 +89,14 @@ class Contact extends Component {
 									</div>
 									<div className="form-group">
 										<label htmlFor="message">Message</label>
-										<textarea className="form-control" id="message" rows="3" />
+										<textarea
+											name="message"
+											className="form-control"
+											id="message"
+											rows="3"
+											value={this.state.message}
+											onChange={this.handleInputChange}
+										/>
 									</div>
 									<button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>
 										Submit
@@ -88,6 +108,9 @@ class Contact extends Component {
 				</div>
 
 				<style jsx>{`
+					.container {
+						padding-bottom: 5vh;
+					}
 					form {
 						width: 75%;
 						margin: 0 auto;
@@ -97,7 +120,7 @@ class Contact extends Component {
 						display: inline-block;
 						margin: 20px auto;
 					}
-					h4 {
+					h3 {
 						color: #9b8650;
 					}
 					.btn {
