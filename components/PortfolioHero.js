@@ -11,10 +11,10 @@ class PortfolioHero extends Component {
 		axios({
 			method: 'GET',
 			datatType: 'json',
-			url: `https://api.github.com/users/${keys.user_id}/repos`,
+			url: `https://api.github.com/users/${process.env.user_id}/repos`,
 			data: {
-				client_id: keys.client_id,
-				client_secret: keys.client_secret
+				client_id: process.env.client_id,
+				client_secret: process.env.client_secret
 			},
 			// in order to bring back topics we need to add below header (according to github api docs)
 			headers: {
@@ -22,11 +22,13 @@ class PortfolioHero extends Component {
 			}
 		}).then((response) => {
 			const repos = response.data;
+			console.log('response', repos);
 			this.setState({
 				repos
 			});
 		});
 	}
+
 	render() {
 		return (
 			<div className="portfolio container">
