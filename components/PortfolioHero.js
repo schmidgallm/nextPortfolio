@@ -23,7 +23,7 @@ class PortfolioHero extends Component {
 			}
 		}).then((response) => {
 			const repos = response.data;
-			console.log('response', repos);
+			console.log(repos);
 			this.setState({
 				repos
 			});

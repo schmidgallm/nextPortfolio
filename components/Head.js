@@ -14,6 +14,7 @@ export default () => (
 				integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
 				crossOrigin="anonymous"
 			/>
+			<link rel="stylesheet" href="/static/nprogress.css" />
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
 			<link
 				rel="stylesheet"
