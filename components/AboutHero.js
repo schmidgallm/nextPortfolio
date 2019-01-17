@@ -1,77 +1,45 @@
 import Link from 'next/link';
 
 const AboutHero = () => (
-	<div className="about container text-center">
-		<h2 className="my-4">About Me</h2>
-		<div className="row">
-			<div className="col-6 text-right">
-				<h4>ASU Grad</h4>
-			</div>
-			<div className="col-6 text-left">
-				<p>
-					Recieved Bachelor of Arts from ASU. Here I focused in historical reasearch and quickly found my love
-					for learning and discovering.
-				</p>
-			</div>
+	<div className="container text-center">
+		<div className="text-content">
+			<h2>About Me</h2>
+			<p>
+				Graduated from Arizona State University where I studied historical research. After graduation I started
+				as a business analysists developing custom SQL scripts along with MSAccess applications and Power BI
+				dashboards. Quite a jump from historical research but relativlily the same. Both involved quite a bit of
+				research before implementing anything.
+			</p>
+			<p>
+				Not long after that I was thrusted into web development creating little splash pages. It didnt take long
+				but I fell in love with programming afgter my first script. From there I took on to a full time Web
+				Developer
+			</p>
+			<p>
+				Soon enough I decided to get more of a classical education in it where I attended and graduated from
+				University of Arizona Coding Bootcamp. After graduation my skill set nearly trippled
+			</p>
+			<Link href="/about">
+				<a className="btn btn-primary mt-2">More about me</a>
+			</Link>
 		</div>
-		<div className="row">
-			<div className="col-6 text-right">
-				<p>
-					Developed custom SQL reporting scripts, MSAccess applications, and PowerBI dashboards. Here I also
-					became thrusted into a web developer role as well.
-				</p>
-			</div>
-			<div className="col-6 text-left">
-				<h4>Buisness Analystis</h4>
-			</div>
-		</div>
-		<div className="row">
-			<div className="col-6 text-right">
-				<h4>Front End Developer</h4>
-			</div>
-			<div className="col-6 text-left">
-				<p>
-					Once I transitioned out of buisness analystis and into a web developer position, I quickly found how
-					much similiar it was to historical research. Finding answers to questions, searching stack overflow,
-					etc.
-				</p>
-			</div>
-		</div>
-		<div className="row">
-			<div className="col-6 text-right">
-				<p>
-					I wanted to keep pushing my knowledge of web development and take a more classical learning approach
-					to it. I learned more how to be a developer in six months than my two years of on work experience.
-				</p>
-			</div>
-			<div className="col-6 text-left">
-				<h4>Full Stack Dev Bootcamp Graduation</h4>
-			</div>
-		</div>
-		<div className="row">
-			<div className="col-6 text-right">
-				<h4>Director of E-Commerce Development</h4>
-			</div>
-			<div className="col-6 text-left">
-				<p>
-					After about four years of develpoment I took the lead role of E-Commerce development. Lead
-					development of two Mobile Apps using React-Native and several Web Apps using Electron.
-				</p>
-			</div>
-		</div>
+
 		<style jsx>{`
-			.about {
-				margin-top: 100px;
-				width: 50%;
+			.text-content {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-color: whitesmoke;
+				padding: 10vh 0;
 			}
-			.text-left {
-				border-left: 1px solid #9b8650;
+			h2 {
+				display: inline-block;
+				border-bottom: 1px solid #9b8650;
 			}
-			.text-right {
-				border-right: 1px solid #9b8650;
-			}
-			h4 {
-				color: #9b8650;
+			p {
+				width: 75%;
+				margin: 30px auto;
 			}
 		`}</style>
 	</div>
