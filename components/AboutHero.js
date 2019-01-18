@@ -19,7 +19,7 @@ const AboutHero = () => (
 			</div>
 			<div className="col-lg-6 col-md-6 col-sm-12 mt-5">
 				<div className="about-content">
-					<h4>Developer. Mentor. Business Intellegint</h4>
+					<h4>Developer. Mentor. Ethical Progammer</h4>
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, impedit sapiente ipsam culpa
 						totam repudiandae autem, corporis perspiciatis eaque doloribus veritatis commodi voluptas,
@@ -35,7 +35,7 @@ const AboutHero = () => (
 		</div>
 		<style jsx>{`
 			.about-wrapper {
-				margin-top: 100px;
+				margin: 100px auto;
 			}
 			h2 {
 				display: inline-block;
