@@ -34,72 +34,92 @@ class PortfolioHero extends Component {
 		return (
 			<div className="portfolio container">
 				<div className="row">
-					<div className="col-lg-3 col-md-4 col-sm-12">
-						<div className="card">
-							<img className="card-img-top" src="/static/thumb_2.png" alt="Remedy Sleep Solutions Logo" />
-							<div className="card-body">
-								<h5 className="card-title">Remedy Sleep Solutions</h5>
-								<p className="card-text">
-									Mobile friendly informational landing page to target traffic and serve as a remote
-									sales tool as well.
-								</p>
-								<a href="www.remedysleepsolutins.com" target="_blank" className="btn btn-primary">
-									See More
-								</a>
-							</div>
-						</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fab fa-react" />
+						<h4>React</h4>
 					</div>
-					<div className="col-lg-3 col-md-4 col-sm-12">
-						<div className="card">
-							<img className="card-img-top" src="/static/thumb_1.png" alt="Legends Furniture Logo" />
-							<div className="card-body">
-								<h5 className="card-title">Legends Furniture</h5>
-								<p className="card-text">Product Line Splash Screen complete with UI scroll events.</p>
-								<br />
-								<br />
-								<a
-									href="https://www.legendsfurniture.com/laurelGroveLandingPage/index.html"
-									target="_blank"
-									className="btn btn-primary"
-								>
-									See More
-								</a>
-							</div>
-						</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fab fa-react" />
+						<h4>GraphQL</h4>
 					</div>
-					<div className="col-lg-3 col-md-4 col-sm-12">
-						<div className="card">
-							<img className="card-img-top" src="/static/thumb_3.png" alt="GDV Logo" />
-							<div className="card-body">
-								<h5 className="card-title">Global Data Visualization</h5>
-								<p className="card-text">
-									Full stack MERN App using three.js to render a webGL object and map users data on
-									screen.
-								</p>
-								<a href="www.remedysleepsolutins.com" target="_blank" className="btn btn-primary">
-									See More
-								</a>
-							</div>
-						</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fab fa-node-js" />
+						<h4>Node</h4>
 					</div>
-					<div className="col-lg-3 col-md-4 col-sm-12">
-						<div className="card">
-							<img className="card-img-top" src="/static/graphql.png" alt="GraphQL Logo" />
-							<div className="card-body">
-								<h5 className="card-title">Full Stack GraphQL App</h5>
-								<p className="card-text">
-									Full stack MERN app with a graphql server running mutations and queries.
-								</p>
-								<a href="www.remedysleepsolutins.com" target="_blank" className="btn btn-primary">
-									See More
-								</a>
-							</div>
-						</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fab fa-react" />
+						<h4>React-Native</h4>
+					</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fab fa-aws" />
+						<h4>DevOps</h4>
+					</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fas fa-database" />
+						<h4>MySQL</h4>
+					</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fas fa-database" />
+						<h4>MongoDB</h4>
+					</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fab fa-node-js" />
+						<h4>Electron</h4>
+					</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fab fa-js" />
+						<h4>Express</h4>
+					</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fab fa-js" />
+						<h4>API Development</h4>
+					</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fab fa-js" />
+						<h4>Jquery</h4>
+					</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fas fa-fire" />
+						<h4>Firebase</h4>
+					</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fab fa-js" />
+						<h4>ThreeJS</h4>
+					</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fab fa-js" />
+						<h4>AJAX</h4>
+					</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fab fa-js" />
+						<h4>HandleBars</h4>
+					</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fas fa-mobile-alt" />
+						<h4>Responsive-Design</h4>
+					</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fab fa-css3-alt" />
+						<h4>CSS / Styled Components</h4>
 					</div>
 				</div>
 				<style jsx>{`
 					.portfolio {
 						margin: 100px auto;
+					}
+					.port-item {
+						background-color: whitesmoke;
+						padding: 20px;
+						cursor: pointer;
+						margin: 10px;
+						border: 1px solid #9b8650;
+					}
+					.port-item:hover {
+						background-color: #9b8650;
+					}
+					i {
+						font-size: 25px;
+						color: black;
 					}
 				`}</style>
 			</div>
