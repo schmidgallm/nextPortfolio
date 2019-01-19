@@ -55,6 +55,10 @@ class PortfolioHero extends Component {
 						<h4>DevOps</h4>
 					</div>
 					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fab fa-react" />
+						<h4>Next</h4>
+					</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
 						<i className="fas fa-database" />
 						<h4>MySQL</h4>
 					</div>
@@ -93,6 +97,10 @@ class PortfolioHero extends Component {
 					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
 						<i className="fab fa-js" />
 						<h4>HandleBars</h4>
+					</div>
+					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+						<i className="fab fa-wordpress" />
+						<h4>WordPress</h4>
 					</div>
 					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
 						<i className="fas fa-mobile-alt" />
