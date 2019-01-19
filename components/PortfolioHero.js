@@ -33,7 +33,7 @@ class PortfolioHero extends Component {
 	render() {
 		return (
 			<div className="portfolio container">
-				<div className="row">
+				<div className="row port-row">
 					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
 						<i className="fab fa-react" />
 						<h4>React</h4>
@@ -115,9 +115,13 @@ class PortfolioHero extends Component {
 					.portfolio {
 						margin: 100px auto;
 					}
+					.port-row {
+						display: flex;
+						justify-content: center;
+					}
 					.port-item {
 						background-color: whitesmoke;
-						padding: 20px;
+						padding: 30px 20px;
 						cursor: pointer;
 						margin: 10px;
 						border: 1px solid #9b8650;
