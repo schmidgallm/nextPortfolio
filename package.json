@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "nodemon server.js",
 		"build": "next build",
-		"start": "NODE_ENV=production next build"
+		"start": "NODE_ENV=production node server.js"
 	},
 	"author": "Michael Schmidgall",
 	"license": "MIT",
