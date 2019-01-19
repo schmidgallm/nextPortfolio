@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "nodemon server.js",
 		"build": "next build",
-		"start": "next build"
+		"start": "next start"
 	},
 	"author": "Michael Schmidgall",
 	"license": "MIT",
