@@ -5,9 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "nodemon server.js",
-		"build": "NODE_ENV=production next build",
-		"start": "NODE_ENV=production node server.js",
-		"heroku-postbuild": "next build"
+		"build": "next build",
+		"start": "next start -p $PORT",
+		"heroku-postbuild": "npm run build"
 	},
 	"author": "Michael Schmidgall",
 	"license": "MIT",
