@@ -21,11 +21,18 @@ const AboutHero = () => (
 				<div className="about-content">
 					<h4>Developer. Mentor. Ethical Progammer</h4>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, impedit sapiente ipsam culpa
-						totam repudiandae autem, corporis perspiciatis eaque doloribus veritatis commodi voluptas,
-						cumque reiciendis officia tenetur explicabo deserunt numquam nulla praesentium. Tenetur quos
-						corrupti numquam similique optio molestias nobis id praesentium quia veniam! Optio cum cumque
-						quidem dicta officiis.
+						Arizona State Univeristy where I graduated with a BA, I focused in historical research. After
+						graduation, I started work as a business analysist where I developed custom SQL reports, created
+						MSAccess applications, and created Microsoft PowerBI dashboards. I was surprised historical
+						research and SQL scripts were so similar. Not in the final product but in the learning and
+						research to accomplish your goal. Soon after I started to get my feet wet in web developemnt
+						where I soon landed my first position as a front end developer. I wanted to go back to school to
+						get a more classical learning approach and take a deep dive into web development. I then
+						enrolled and graduated from a coding bootcamp under Univeristy of Arizona where my skills in not
+						ony development, but the ability to learn and problem solve were increased extremely quickly.
+						Soon after I took a more complex role developing full stack desktop and mobile applications.
+						Programming is something I truly love and no longer do I ever have to feel like I am working for
+						a living.
 					</p>
 					<Link href="/contact">
 						<a className="btn btn-primary">Contact Me</a>
