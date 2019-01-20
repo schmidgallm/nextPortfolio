@@ -6,7 +6,6 @@ const next = require('next');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-const Contact = require('./models/Contacts.js');
 
 // Init App
 const PORT = parseInt(process.env.PORT, 10) || 3000;
@@ -34,7 +33,7 @@ app.prepare().then(() => {
 	server.use(routes);
 
 	// init db connection then listen for server start in callback
-	mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }, (error) => {
+	mongoose.connect(process.env.MONGOLAB_SILVER_URI, { useNewUrlParser: true }, (error) => {
 		if (error) throw error;
 		console.log('> Connected to Database...');
 		server.listen(PORT, (err) => {
