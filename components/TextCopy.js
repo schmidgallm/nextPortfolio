@@ -3,8 +3,10 @@ import Link from 'next/link';
 const TextCopy = () => (
 	<div className="container text-center">
 		<div className="text-content">
-			<h2>hello there</h2>
-			<em>"Obi-Wan Kenobi"</em>
+			<div className="text-header text-center">
+				<h2>hello there</h2>
+				<p>"Obi-Wan Kenobi"</p>
+			</div>
 			<p>
 				They say if you love what you do then you will never have to work a day in your life. Not untill
 				programming did I understand the whole truth in this statement. I love web developemnt and all the wins
@@ -24,6 +26,9 @@ const TextCopy = () => (
 				padding: 20vh 0;
 				margin-top: 10vh;
 			}
+			.text-header p {
+				margin-top: 0;
+			}
 			h2 {
 				display: inline-block;
 				border-bottom: 1px solid #9b8650;
@@ -31,10 +36,6 @@ const TextCopy = () => (
 			p {
 				width: 75%;
 				margin: 30px auto;
-			}
-			cite {
-				display: block;
-				margin-left: 50px;
 			}
 		`}</style>
 	</div>
