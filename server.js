@@ -8,8 +8,8 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 
 // Init App
-const PORT = parseInt(process.env.PORT, 10) || 3000;
-// const PORT = process.env.PORT || 3000;
+// const PORT = parseInt(process.env.PORT, 10) || 3000;
+const PORT = process.env.PORT || 5001;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
