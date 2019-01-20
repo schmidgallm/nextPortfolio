@@ -37,9 +37,13 @@ app.prepare().then(() => {
 		console.log('Now Connected to MongoDB');
 	});
 
-	// Init server and begin listening
-	server.listen(PORT, (err) => {
-		if (err) throw err;
-		console.log(`Server now listening on port: ${PORT}`);
+	// init db connection then listen for server start in callback
+	mongoose.connect(process.env.MONGOLAB_SILVER_URI, { useNewUrlParser: true }, (error) => {
+		if (error) throw error;
+		console.log('> Connected to Database...');
+		server.listen(PORT, (err) => {
+			if (err) throw err;
+			console.log(`> Ready on http://localhost:${PORT}...`);
+		});
 	});
 });
