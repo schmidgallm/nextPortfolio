@@ -4,7 +4,7 @@ const TextCopy = () => (
 	<div className="container text-center">
 		<div className="text-content">
 			<h2>hello there</h2>
-			<cite>"Obi-Wan Kenobi"</cite>
+			<em>"Obi-Wan Kenobi"</em>
 			<p>
 				They say if you love what you do then you will never have to work a day in your life. Not untill
 				programming did I understand the whole truth in this statement. I love web developemnt and all the wins
