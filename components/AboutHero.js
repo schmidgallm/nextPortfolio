@@ -25,15 +25,21 @@ const AboutHero = () => (
 						graduation, I started work as a business analysist where I developed custom SQL reports, created
 						MSAccess applications, and created Microsoft PowerBI dashboards. I was surprised historical
 						research and SQL scripts were so similar. Not in the final product but in the learning and
-						research to accomplish your goal. Soon after I started to get my feet wet in web developemnt
-						where I soon landed my first position as a front end developer. I wanted to go back to school to
-						get a more classical learning approach and take a deep dive into web development. I then
-						enrolled and graduated from a coding bootcamp under Univeristy of Arizona where my skills in not
-						ony development, but the ability to learn and problem solve were increased extremely quickly.
+						research to accomplish your goal.
+					</p>
+					<p>
+						Soon after I started to get my feet wet in web developemnt where I soon landed my first position
+						as a front end developer. I wanted to go back to school to get a more classical learning
+						approach and take a deep dive into web development. I then enrolled and graduated from a coding
+						bootcamp under Univeristy of Arizona where my skills in not ony development, but the ability to
+						learn and problem solve were increased extremely quickly.
+					</p>
+					<p>
 						Soon after I took a more complex role developing full stack desktop and mobile applications.
 						Programming is something I truly love and no longer do I ever have to feel like I am working for
 						a living.
 					</p>
+					<hr />
 					<Link href="/contact">
 						<a className="btn btn-primary">Contact Me</a>
 					</Link>
@@ -59,6 +65,9 @@ const AboutHero = () => (
 			.about-content {
 				width: 75%;
 				margin: 0 auto;
+			}
+			hr {
+				margin-bottom: 40px;
 			}
 		`}</style>
 	</div>

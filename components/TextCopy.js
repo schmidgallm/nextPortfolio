@@ -4,10 +4,15 @@ const TextCopy = () => (
 	<div className="container text-center">
 		<div className="text-content">
 			<h2>hello there</h2>
+			<cite>
+				<em>"Obi-Wan Kenobi"</em>
+			</cite>
 			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis placeat accusantium id neque repellendus
-				sed nobis voluptatem tempore saepe reprehenderit vitae voluptates repudiandae at quisquam molestiae
-				impedit temporibus dolorum nemo odit, deserunt dicta minus cumque! Esse nulla eveniet suscipit in!
+				They say if you love what you do then you will never have to work a day in your life. Not untill
+				programming did I understand the whole truth in this statement. I love web developemnt and all the wins
+				and hardships that go along with it. So please reach out, say hi, ask questions, or just drop some Star
+				Wars quotes. My knowlege is for everyone who asks whether it be from spooling up GraphQL servers, AWS
+				instances, or who shot first Han or Greedo.
 			</p>
 			<Link href="/about">
 				<a className="btn btn-primary mt-2">More about me</a>
@@ -28,6 +33,10 @@ const TextCopy = () => (
 			p {
 				width: 75%;
 				margin: 30px auto;
+			}
+			cite {
+				display: block;
+				margin-left: 50px;
 			}
 		`}</style>
 	</div>
