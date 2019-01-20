@@ -12,7 +12,7 @@ class PortfolioHero extends Component {
 		axios({
 			method: 'GET',
 			datatType: 'json',
-			url: `https://api.github.com/users/${keys.user_id}/repos`,
+			url: `https://api.github.com/users/schmidgallm/repos`,
 			data: {
 				client_id: keys.client_id,
 				client_secret: keys.client_secret
