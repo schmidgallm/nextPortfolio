@@ -8,8 +8,8 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 
 // Init App
-// const PORT = parseInt(process.env.PORT, 10) || 3000;
-const PORT = process.env.PORT || 5001;
+const PORT = parseInt(process.env.PORT, 10) || 5001;
+// const PORT = process.env.PORT || 5001;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
@@ -32,13 +32,14 @@ app.prepare().then(() => {
 	const routes = require('./routes/routes.js');
 	server.use(routes);
 
-	// init db connection then listen for server start in callback
-	mongoose.connect(process.env.MONGOLAB_SILVER_URI, { useNewUrlParser: true }, (error) => {
-		if (error) throw error;
-		console.log('> Connected to Database...');
-		server.listen(PORT, (err) => {
-			if (err) throw err;
-			console.log(`> Ready on http://localhost:${PORT}...`);
-		});
+	// Connect to MongoDB with MLAB URI
+	mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }, () => {
+		console.log('Now Connected to MongoDB');
+	});
+
+	// Init server and begin listening
+	server.listen(PORT, (err) => {
+		if (err) throw err;
+		console.log(`Server now listening on port: ${PORT}`);
 	});
 });
