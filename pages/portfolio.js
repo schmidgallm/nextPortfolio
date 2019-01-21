@@ -8,7 +8,7 @@ class portfolio extends Component {
 		return (
 			<Layout>
 				<View>
-					<PortfolioHero repos={this.state.repos} />
+					<PortfolioHero />
 				</View>
 			</Layout>
 		);
