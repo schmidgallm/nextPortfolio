@@ -8,15 +8,6 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const Contacts = require('./models/Contacts');
 
-// init proxy
-const devProxy = {
-	'/api': {
-		target: process.env.PORT || 'localhost:5001',
-		pathRewrite: { '^/api': '/' },
-		changeOrigin: true
-	}
-};
-
 // Init App
 const PORT = parseInt(process.env.PORT, 10) || 5001;
 // const PORT = process.env.PORT || 5001;
@@ -27,14 +18,6 @@ const handle = app.getRequestHandler();
 // Prepare app and start listener on port variable
 app.prepare().then(() => {
 	const server = express();
-
-	// Set up the proxy.
-	if (dev && devProxy) {
-		const proxyMiddleware = require('http-proxy-middleware');
-		Object.keys(devProxy).forEach(function(context) {
-			server.use(proxyMiddleware(context, devProxy[context]));
-		});
-	}
 
 	// User morgan to log all requests
 	server.use(logger('dev'));
