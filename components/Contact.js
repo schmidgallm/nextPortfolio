@@ -108,12 +108,18 @@ class Contact extends Component {
 				</div>
 
 				<style jsx>{`
-					.container {
-						padding-bottom: 5vh;
+					#contact-me {
+						margin: 100px auto;
+						margin-bottom: 50px;
 					}
 					form {
 						width: 75%;
 						margin: 0 auto;
+					}
+					@media only screen and (max-width: 600px) {
+						form {
+							width: 100%;
+						}
 					}
 					.text-content h2 {
 						border-bottom: 1px solid #9b8650;
