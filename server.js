@@ -6,6 +6,7 @@ const next = require('next');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+const Contacts = require('./models/Contacts');
 
 // init proxy
 const devProxy = {
@@ -38,6 +39,16 @@ app.prepare().then(() => {
 	// User morgan to log all requests
 	server.use(logger('dev'));
 
+	server.post('/contacts', (req, res) => {
+		Contacts.create(req.body)
+			.then((response) => {
+				console.log(response);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	});
+
 	// Body Parser Middleware
 	server.use(bodyParser.urlencoded({ extended: true }));
 	server.use(bodyParser.json());
@@ -45,9 +56,6 @@ app.prepare().then(() => {
 	server.get('*', (req, res) => {
 		return handle(req, res);
 	});
-
-	const routes = require('./routes/routes.js');
-	server.use(routes);
 
 	// Connect to MongoDB with MLAB URI
 	mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }, () => {
