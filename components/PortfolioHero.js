@@ -1,4 +1,5 @@
-const PortfolioHero = () => {
+const PortfolioHero = (props) => {
+	console.log('props', props);
 	return (
 		<div className="portfolio container">
 			<div className="row port-row">
