@@ -8,6 +8,12 @@ export default () => (
 			<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			<meta httpEquiv="X-UA-Compatible" content="ie=edge" />
 			<meta charSet="UTF-8" />
+			<meta name="author" content="Michael Schmidgall" />
+			<meta
+				name="keywords"
+				content="Michael Schmidgall, React, Next.js, Server Side React, mongodb, express, getInitialProps, Javascript"
+			/>
+			<meta name="description" content="Server Side React Portfolio for Michael Schmidgall" />
 			<link
 				rel="stylesheet"
 				href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
