@@ -18,7 +18,6 @@ export default () => (
 		</View>
 		<View>
 			<Collaboration />
-			<Contact />
 			<Footer />
 		</View>
 	</Layout>

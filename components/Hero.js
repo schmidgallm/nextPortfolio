@@ -1,12 +1,14 @@
+import Link from 'next/link';
+
 const Hero = () => (
 	<div className="hero-bg">
 		<div className="hero-content">
 			<h1>Michael Schmidgall</h1>
 			<p className="lead">Developer. Mentor. Ethical Programmer</p>
 			<hr />
-			<a href="#contact-me" className="btn btn-primary">
-				Contact Me
-			</a>
+			<Link href="/contact">
+				<a className="btn btn-primary">Contact Me</a>
+			</Link>
 		</div>
 
 		<style jsx>{`
