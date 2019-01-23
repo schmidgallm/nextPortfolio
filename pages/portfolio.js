@@ -1,9 +1,7 @@
-const dotenv = require('dotenv');
-dotenv.config();
 import Layout from '../components/Layout';
 import View from '../components/View';
 import PortfolioHero from '../components/PortfolioHero';
-import keys from './keys';
+import keys from '../config/keys';
 import fetch from 'isomorphic-unfetch';
 import axios from 'axios';
 
