@@ -11,7 +11,6 @@ class portfolio extends React.Component {
 	}
 
 	render() {
-		console.log(this.props);
 		return (
 			<Layout>
 				<View>

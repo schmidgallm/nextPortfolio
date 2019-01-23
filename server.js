@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const Contacts = require('./models/Contacts');
 
 // Init App
-const PORT = parseInt(process.env.PORT, 10) || 5001;
+const PORT = parseInt(process.env.PORT, 10) || 3000;
 // const PORT = process.env.PORT || 5001;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -19,22 +19,16 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
 	const server = express();
 
+	// Body Parser Middleware
+	// server.use(bodyParser.urlencoded({ extended: true }));
+	server.use(bodyParser.json());
+
 	// User morgan to log all requests
 	server.use(logger('dev'));
 
-	server.post('/contacts', (req, res) => {
-		Contacts.create(req.body)
-			.then((response) => {
-				console.log(response);
-			})
-			.catch((error) => {
-				console.log(error);
-			});
-	});
-
-	// Body Parser Middleware
-	server.use(bodyParser.urlencoded({ extended: true }));
-	server.use(bodyParser.json());
+	// bring in routes so server can use
+	const routes = require('./routes/routes.js');
+	server.use(routes);
 
 	server.get('*', (req, res) => {
 		return handle(req, res);
