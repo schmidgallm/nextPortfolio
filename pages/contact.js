@@ -24,11 +24,21 @@ class contact extends Component {
 		// prevent form from submitting
 		e.preventDefault();
 		console.log(this.state);
-		API.postContact(this.state);
+		API.postContact(this.state, this.resetState);
 
 		// show success message if message successfully sent
 		document.querySelector('#success-message').style.display = 'block';
 		document.querySelector('#success-message').classList.add('animated', 'slideInLeft');
+	};
+
+	resetState = () => {
+		this.setState({
+			name: '',
+			company: '',
+			email: '',
+			message: ''
+		});
+		document.querySelector('#success-message').style.display = 'none';
 	};
 
 	// onload ui
