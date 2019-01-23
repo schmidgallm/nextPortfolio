@@ -1,3 +1,5 @@
+const dotenv = require('dotenv');
+dotenv.config();
 import Layout from '../components/Layout';
 import View from '../components/View';
 import PortfolioHero from '../components/PortfolioHero';
@@ -9,8 +11,8 @@ class portfolio extends React.Component {
 	static async getInitialProps() {
 		const response = await fetch(`https://api.github.com/users/schmidgallm/repos`, {
 			data: {
-				client_id: keys.client_id,
-				client_secret: keys.client_secret
+				client_id: process.env.client_id,
+				client_secret: process.env.client_secret
 			},
 			// in order to bring back topics we need to add below header (according to github api docs)
 			headers: {
