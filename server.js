@@ -6,8 +6,7 @@ const next = require('next');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-const Contacts = require('./models/Contacts');
-
+const cors = require('cors');
 // Init App
 const PORT = parseInt(process.env.PORT, 10) || 3000;
 // const PORT = process.env.PORT || 5001;
@@ -22,6 +21,8 @@ app.prepare().then(() => {
 	// Body Parser Middleware
 	// server.use(bodyParser.urlencoded({ extended: true }));
 	server.use(bodyParser.json());
+
+	server.use(cors());
 
 	// User morgan to log all requests
 	server.use(logger('dev'));
