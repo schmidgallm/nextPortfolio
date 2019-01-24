@@ -2,7 +2,6 @@ import Layout from '../components/Layout';
 import View from '../components/View';
 import PortfolioHero from '../components/PortfolioHero';
 import fetch from 'isomorphic-fetch';
-import keys from '../config/keys';
 
 class portfolio extends React.Component {
 	static async getInitialProps({ req }) {
