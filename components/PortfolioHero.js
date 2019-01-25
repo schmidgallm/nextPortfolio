@@ -1,5 +1,6 @@
 const PortfolioHero = (props) => {
-	console.log('props here!', props);
+	const repos = props.repos;
+	console.log(repos);
 	return (
 		<div className="portfolio container">
 			<div className="row port-row">

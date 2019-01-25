@@ -7,8 +7,8 @@ class portfolio extends React.Component {
 	static async getInitialProps({ req }) {
 		const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : '';
 		const response = await fetch(baseUrl + '/repos');
-		const repos = await response.json();
-		return { repos };
+		const data = await response.json();
+		return { repos: data };
 	}
 
 	render() {
