@@ -5,6 +5,7 @@ const router = express.Router();
 const Contacts = require('../models/Contacts');
 const axios = require('axios');
 
+// post route for all contact form submits. posts to mlab in contact collection
 router.post('/post', (req, res) => {
 	Contacts.create(req.body)
 		.then((response) => {
@@ -16,6 +17,8 @@ router.post('/post', (req, res) => {
 		});
 });
 
+// get route to call github api and return response to json to /reops so client side can use
+// need to use axios and not isomporphic-fetch because we need to pass an object for github api to handle. fetch no likey objects except in callbacks.
 router.get('/repos', (req, res) => {
 	axios({
 		method: 'GET',
@@ -25,11 +28,12 @@ router.get('/repos', (req, res) => {
 			client_id: process.env.client_id,
 			client_secret: process.env.client_secret
 		},
-		// in order to bring back topics we need to add below header (according to github api docs)
+		// github api needs below header in order to bring back repo topics
 		headers: {
 			Accept: 'application/vnd.github.mercy-preview+json'
 		}
 	}).then((response) => {
+		// return the data objet from the response and send as json
 		const repos = response.data;
 		return res.json(repos);
 	});
