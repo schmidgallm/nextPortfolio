@@ -20,7 +20,7 @@ router.get('/repos', (req, res) => {
 	axios({
 		method: 'GET',
 		datatType: 'json',
-		url: `https://api.github.com/users/${process.env.user_id}/repos`,
+		url: `https://api.github.com/users/schmidgallm/repos`,
 		data: {
 			client_id: process.env.client_id,
 			client_secret: process.env.client_secret
