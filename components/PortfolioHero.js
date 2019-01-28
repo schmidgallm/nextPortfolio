@@ -1,6 +1,9 @@
 const PortfolioHero = (props) => {
 	const repos = props.repos;
-	console.log(repos);
+	// TODO
+	// store all topics into variable array -- no dups
+	// onclick of div check for topic
+	// display correct topic with link to each individual beakdown of project
 	return (
 		<div className="portfolio container">
 			<div className="row port-row">
