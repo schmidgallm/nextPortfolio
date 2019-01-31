@@ -4,7 +4,7 @@ const { GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLID, GraphQLInt, 
 
 // TODO
 // import db models
-const Contact = require('../models/Contacts');
+const { Contact, Repos } = require('../models');
 
 // init contact schema
 const ContactType = new GraphQLObjectType({
