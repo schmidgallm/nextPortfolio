@@ -38,4 +38,32 @@ router.get('/repos', (req, res) => {
 		return res.json(repos);
 	});
 });
+
+// get route to call github api to return topics of each repo
+router.get('/repos/topics', (req, res) => {
+	axios({
+		method: 'GET',
+		datatType: 'json',
+		url: `https://api.github.com/users/${process.env.user_id}/repos`,
+		data: {
+			client_id: process.env.client_id,
+			client_secret: process.env.client_secret
+		},
+		// github api needs below header in order to bring back repo topics
+		headers: {
+			Accept: 'application/vnd.github.mercy-preview+json'
+		}
+	}).then((response) => {
+		// return the data objet from the response and send as json
+		const repos = response.data;
+		const allTopics = repos.map((topic) => {
+			return topic.topics;
+		});
+		const topics = [];
+		allTopics.forEach((topic) => {
+			console.log(topic);
+		});
+	});
+});
+
 module.exports = router;
