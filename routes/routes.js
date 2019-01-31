@@ -2,9 +2,20 @@ const dotenv = require('dotenv');
 dotenv.config();
 const express = require('express');
 const router = express.Router();
-const Contacts = require('../models/Contacts');
-const axios = require('axios');
+// const Contacts = require('../models/Contacts');
+// const axios = require('axios');
+const graphqlHTTP = require('express-graphql');
+const schema = require('../schema/schema');
 
+// GraphQL main endpoint
+router.use(
+	'/graphql',
+	graphqlHTTP({
+		schema,
+		graphiql: true
+	})
+);
+/*
 // post route for all contact form submits. posts to mlab in contact collection
 router.post('/post', (req, res) => {
 	Contacts.create(req.body)
@@ -65,5 +76,6 @@ router.get('/repos/topics', (req, res) => {
 		});
 	});
 });
+*/
 
 module.exports = router;
