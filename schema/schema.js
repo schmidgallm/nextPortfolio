@@ -18,6 +18,13 @@ const ContactType = new GraphQLObjectType({
 	})
 });
 
+const TopicType = new GraphQLObjectType({
+	name: 'Topics',
+	fields: () => ({
+		name: { type: GraphQLString }
+	})
+});
+
 // init repo schema
 const RepoType = new GraphQLObjectType({
 	name: 'Repos',
@@ -26,7 +33,7 @@ const RepoType = new GraphQLObjectType({
 		name: { type: GraphQLString },
 		clone_url: { type: GraphQLString },
 		stargazers_count: { type: GraphQLInt },
-		topics: { type: GraphQLString }
+		topics: { type: GraphQLList(TopicType) }
 	})
 });
 
