@@ -2,8 +2,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const express = require('express');
 const router = express.Router();
-const Contacts = require('../models/Contacts');
-const Repos = require('../models/Repos');
+const db = require('../models/');
 const axios = require('axios');
 const graphqlHTTP = require('express-graphql');
 const schema = require('../schema/schema');
@@ -30,7 +29,6 @@ router.post('/post', (req, res) => {
 });
 */
 
-// get route to call github api and return response to json to /reops so client side can use
 // need to use axios and not isomporphic-fetch because we need to pass an object for github api to handle. fetch no likey objects except in callbacks.
 router.get('/repos', (req, res) => {
 	axios({
@@ -46,16 +44,17 @@ router.get('/repos', (req, res) => {
 			Accept: 'application/vnd.github.mercy-preview+json'
 		}
 	}).then((response) => {
-		// return the data objet from the response and send as json
+		// return the data objet from the response and create each instance in db
 		const repos = response.data;
 		repos.forEach((repo) => {
-			Repos.create({
-				_id: repo.id,
-				name: repo.name,
-				clone_url: repo.clone_url,
-				stargazers_count: repo.stargazers_count,
-				topics: repo.topics
-			})
+			db.Repos
+				.create({
+					_id: repo.id,
+					name: repo.name,
+					clone_url: repo.clone_url,
+					stargazers_count: repo.stargazers_count,
+					topics: repo.topics
+				})
 				.then((rsp) => {
 					console.log(rsp);
 				})

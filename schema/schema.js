@@ -10,7 +10,7 @@ const { Contact, Repos } = require('../models');
 const ContactType = new GraphQLObjectType({
 	name: 'Contacts',
 	fields: () => ({
-		id: { type: GraphQLID },
+		_id: { type: GraphQLNonNull(GraphQLID) },
 		name: { type: GraphQLString },
 		company: { type: GraphQLString },
 		email: { type: GraphQLString },
@@ -22,11 +22,11 @@ const ContactType = new GraphQLObjectType({
 const RepoType = new GraphQLObjectType({
 	name: 'Repos',
 	fields: () => ({
-		_id: { type: GraphQLID },
+		_id: { type: GraphQLNonNull(GraphQLID) },
 		name: { type: GraphQLString },
 		clone_url: { type: GraphQLString },
 		stargazers_count: { type: GraphQLInt },
-		topics: { type: GraphQLList }
+		topics: { type: GraphQLString }
 	})
 });
 
