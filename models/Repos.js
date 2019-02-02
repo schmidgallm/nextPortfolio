@@ -5,13 +5,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const RepoSchema = new Schema({
-	id: {
-		type: Schema.Types.ObjectId,
+	_id: {
+		type: Number,
 		required: true
 	},
 	name: {
-		type: String,
-		required: true
+		type: String
 	},
 	clone_url: {
 		type: String,
@@ -27,7 +26,8 @@ const RepoSchema = new Schema({
 			(val) => {
 				return val.length > 0;
 			}
-		]
+		],
+		required: true
 	}
 });
 const Repos = mongoose.model('repos', RepoSchema);

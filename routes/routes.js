@@ -2,8 +2,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 const express = require('express');
 const router = express.Router();
-// const Contacts = require('../models/Contacts');
-// const axios = require('axios');
+const Contacts = require('../models/Contacts');
+const Repos = require('../models/Repos');
+const axios = require('axios');
 const graphqlHTTP = require('express-graphql');
 const schema = require('../schema/schema');
 
@@ -27,6 +28,7 @@ router.post('/post', (req, res) => {
 			console.log(error);
 		});
 });
+*/
 
 // get route to call github api and return response to json to /reops so client side can use
 // need to use axios and not isomporphic-fetch because we need to pass an object for github api to handle. fetch no likey objects except in callbacks.
@@ -46,36 +48,22 @@ router.get('/repos', (req, res) => {
 	}).then((response) => {
 		// return the data objet from the response and send as json
 		const repos = response.data;
-		return res.json(repos);
-	});
-});
-
-// get route to call github api to return topics of each repo
-router.get('/repos/topics', (req, res) => {
-	axios({
-		method: 'GET',
-		datatType: 'json',
-		url: `https://api.github.com/users/${process.env.user_id}/repos`,
-		data: {
-			client_id: process.env.client_id,
-			client_secret: process.env.client_secret
-		},
-		// github api needs below header in order to bring back repo topics
-		headers: {
-			Accept: 'application/vnd.github.mercy-preview+json'
-		}
-	}).then((response) => {
-		// return the data objet from the response and send as json
-		const repos = response.data;
-		const allTopics = repos.map((topic) => {
-			return topic.topics;
-		});
-		const topics = [];
-		allTopics.forEach((topic) => {
-			console.log(topic);
+		repos.forEach((repo) => {
+			Repos.create({
+				_id: repo.id,
+				name: repo.name,
+				clone_url: repo.clone_url,
+				stargazers_count: repo.stargazers_count,
+				topics: repo.topics
+			})
+				.then((rsp) => {
+					console.log(rsp);
+				})
+				.catch((err) => {
+					console.log(err);
+				});
 		});
 	});
 });
-*/
 
 module.exports = router;

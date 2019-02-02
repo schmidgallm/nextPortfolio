@@ -18,6 +18,18 @@ const ContactType = new GraphQLObjectType({
 	})
 });
 
+// init repo schema
+const RepoType = new GraphQLObjectType({
+	name: 'Repos',
+	fields: () => ({
+		_id: { type: GraphQLID },
+		name: { type: GraphQLString },
+		clone_url: { type: GraphQLString },
+		stargazers_count: { type: GraphQLInt },
+		topics: { type: GraphQLList }
+	})
+});
+
 // init graphql root query
 const RootQuery = new GraphQLObjectType({
 	name: 'RootQueryType',
@@ -35,6 +47,21 @@ const RootQuery = new GraphQLObjectType({
 			resolve(parent, args) {
 				// grab data from db here
 				return Contact.find({});
+			}
+		},
+		repo: {
+			type: RepoType,
+			args: { id: { type: GraphQLID } },
+			resolve(parent, args) {
+				// grab data from db here
+				return Repos.findById(args.id);
+			}
+		},
+		repos: {
+			type: new GraphQLList(RepoType),
+			resolve(parent, args) {
+				// grab data from db here
+				return Repos.find({});
 			}
 		}
 	}
