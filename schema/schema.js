@@ -10,7 +10,7 @@ const { Contact, Repos } = require('../models');
 const ContactType = new GraphQLObjectType({
 	name: 'Contacts',
 	fields: () => ({
-		_id: { type: GraphQLNonNull(GraphQLID) },
+		_id: { type: GraphQLID },
 		name: { type: GraphQLString },
 		company: { type: GraphQLString },
 		email: { type: GraphQLString },
@@ -20,20 +20,22 @@ const ContactType = new GraphQLObjectType({
 
 const TopicType = new GraphQLObjectType({
 	name: 'Topics',
-	fields: {
-		name: { type: GraphQLString }
-	}
+	fields: () => ({
+		topic: { type: GraphQLString }
+	})
 });
 
 // init repo schema
 const RepoType = new GraphQLObjectType({
 	name: 'Repos',
 	fields: () => ({
-		_id: { type: GraphQLNonNull(GraphQLID) },
+		_id: { type: GraphQLID },
 		name: { type: GraphQLString },
+		description: { type: GraphQLString },
 		clone_url: { type: GraphQLString },
 		stargazers_count: { type: GraphQLInt },
-		topics: { type: [ TopicType ] }
+		homepage: { type: GraphQLString },
+		topics: { type: GraphQLList(TopicType) }
 	})
 });
 
