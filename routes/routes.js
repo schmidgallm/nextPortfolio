@@ -2,8 +2,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 const express = require('express');
 const router = express.Router();
-const db = require('../models/');
 const axios = require('axios');
+const db = require('../models/');
 const graphqlHTTP = require('express-graphql');
 const schema = require('../schema/schema');
 
@@ -45,14 +45,16 @@ router.get('/repos', (req, res) => {
 		}
 	}).then((response) => {
 		// return the data objet from the response and create each instance in db
-		const repos = response.data;
+		const repos = response.data.filter((repo) => repo.topics.length != 0);
 		repos.forEach((repo) => {
 			db.Repos
 				.create({
 					_id: repo.id,
 					name: repo.name,
+					description: repo.description,
 					clone_url: repo.clone_url,
 					stargazers_count: repo.stargazers_count,
+					homepage: repo.homepage,
 					topics: repo.topics
 				})
 				.then((rsp) => {
@@ -62,6 +64,7 @@ router.get('/repos', (req, res) => {
 					console.log(err);
 				});
 		});
+		return res.json(repos);
 	});
 });
 
