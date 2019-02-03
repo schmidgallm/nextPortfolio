@@ -12,12 +12,19 @@ const RepoSchema = new Schema({
 	name: {
 		type: String
 	},
+	description: {
+		type: String
+	},
 	clone_url: {
 		type: String,
 		required: true
 	},
 	stargazers_count: {
 		type: Number
+	},
+	homepage: {
+		type: String
+		// not required since there are some repos that are null
 	},
 	topics: {
 		type: Array,
