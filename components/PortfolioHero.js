@@ -1,11 +1,6 @@
 const PortfolioHero = (props) => {
 	const repos = props.repos;
-	const allTopics = [];
-	const topics = repos.map((topic) => {
-		if (topic.topics.length !== undefined) {
-			return topic.topics;
-		}
-	});
+	console.log(repos);
 	// TODO
 	// store all topics into variable array -- no dups
 	// onclick of div check for topic
