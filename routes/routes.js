@@ -29,6 +29,7 @@ router.post('/post', (req, res) => {
 });
 */
 
+/*
 // need to use axios and not isomporphic-fetch because we need to pass an object for github api to handle. fetch no likey objects except in callbacks.
 router.get('/repos', (req, res) => {
 	axios({
@@ -67,5 +68,6 @@ router.get('/repos', (req, res) => {
 		return res.json(repos);
 	});
 });
+*/
 
 module.exports = router;

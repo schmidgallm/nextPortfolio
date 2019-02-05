@@ -1,6 +1,9 @@
 // Dependecies
+const dotenv = require('dotenv');
+dotenv.config();
 const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLID, GraphQLInt, GraphQLList, GraphQLNonNull } = graphql;
+const axios = require('axios');
 
 // TODO
 // import db models
@@ -10,7 +13,7 @@ const { Contact, Repos } = require('../models');
 const ContactType = new GraphQLObjectType({
 	name: 'Contacts',
 	fields: () => ({
-		_id: { type: GraphQLID },
+		_id: { type: GraphQLNonNull(GraphQLID) },
 		name: { type: GraphQLString },
 		company: { type: GraphQLString },
 		email: { type: GraphQLString },
@@ -19,9 +22,9 @@ const ContactType = new GraphQLObjectType({
 });
 
 const TopicType = new GraphQLObjectType({
-	name: 'Topics',
+	name: 'Topic',
 	fields: () => ({
-		topic: { type: GraphQLString }
+		name: { type: GraphQLString }
 	})
 });
 
@@ -29,7 +32,7 @@ const TopicType = new GraphQLObjectType({
 const RepoType = new GraphQLObjectType({
 	name: 'Repos',
 	fields: () => ({
-		_id: { type: GraphQLID },
+		_id: { type: GraphQLNonNull(GraphQLID) },
 		name: { type: GraphQLString },
 		description: { type: GraphQLString },
 		clone_url: { type: GraphQLString },
@@ -62,15 +65,45 @@ const RootQuery = new GraphQLObjectType({
 			type: RepoType,
 			args: { id: { type: GraphQLID } },
 			resolve(parent, args) {
-				// grab data from db here
-				return Repos.findById(args.id);
+				// fetch from api
+				return axios({
+					method: 'GET',
+					datatType: 'json',
+					url: `https://api.github.com/users/${process.env.user_id}/repos`,
+					data: {
+						client_id: process.env.client_id,
+						client_secret: process.env.client_secret
+					},
+					// github api needs below header in order to bring back repo topics
+					headers: {
+						Accept: 'application/vnd.github.mercy-preview+json'
+					}
+				}).then((response) => {
+					const repos = response.data.filter((repo) => repo.topics.length != 0);
+					return (repos.id = args.id);
+				});
 			}
 		},
 		repos: {
 			type: new GraphQLList(RepoType),
 			resolve(parent, args) {
-				// grab data from db here
-				return Repos.find({});
+				// fetch from api
+				// fetch from api
+				return axios({
+					method: 'GET',
+					datatType: 'json',
+					url: `https://api.github.com/users/${process.env.user_id}/repos`,
+					data: {
+						client_id: process.env.client_id,
+						client_secret: process.env.client_secret
+					},
+					// github api needs below header in order to bring back repo topics
+					headers: {
+						Accept: 'application/vnd.github.mercy-preview+json'
+					}
+				}).then((response) => {
+					return response.data.filter((repo) => repo.topics.length != 0);
+				});
 			}
 		}
 	}
