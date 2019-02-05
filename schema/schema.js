@@ -38,7 +38,9 @@ const RepoType = new GraphQLObjectType({
 		clone_url: { type: GraphQLString },
 		stargazers_count: { type: GraphQLInt },
 		homepage: { type: GraphQLString },
-		topics: { type: GraphQLList(TopicType) }
+		topics(obj) {
+			return obj.topics;
+		}
 	})
 });
 
