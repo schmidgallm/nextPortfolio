@@ -2,6 +2,8 @@ import Layout from '../components/Layout';
 import View from '../components/View';
 import PortfolioHero from '../components/PortfolioHero';
 import fetch from 'isomorphic-fetch';
+import { graphql } from 'react-apollo';
+import getRepos from '../queries/queries';
 
 class portfolio extends React.Component {
 	static async getInitialProps({ req }) {
@@ -22,4 +24,4 @@ class portfolio extends React.Component {
 	}
 }
 
-export default portfolio;
+export default graphql(getRepos)(portfolio);

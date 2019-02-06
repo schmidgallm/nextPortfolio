@@ -1,6 +1,8 @@
 const PortfolioHero = (props) => {
+	/*
 	const repos = props.repos;
 	console.log(repos);
+	*/
 	// TODO
 	// store all topics into variable array -- no dups
 	// onclick of div check for topic
