@@ -2,7 +2,16 @@
 const dotenv = require('dotenv');
 dotenv.config();
 const graphql = require('graphql');
-const { GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLID, GraphQLInt, GraphQLList, GraphQLNonNull } = graphql;
+const {
+	GraphQLObjectType,
+	GraphQLString,
+	GraphQLSchema,
+	GraphQLID,
+	GraphQLInt,
+	GraphQLList,
+	GraphQLNonNull,
+	GraphQLEnumType
+} = graphql;
 const axios = require('axios');
 
 // TODO
@@ -24,7 +33,13 @@ const ContactType = new GraphQLObjectType({
 const TopicType = new GraphQLObjectType({
 	name: 'Topic',
 	fields: () => ({
-		name: { type: GraphQLString }
+		name: {
+			type: GraphQLString,
+			resolve(obj) {
+				console.log(obj);
+				return obj;
+			}
+		}
 	})
 });
 
@@ -38,8 +53,8 @@ const RepoType = new GraphQLObjectType({
 		clone_url: { type: GraphQLString },
 		stargazers_count: { type: GraphQLInt },
 		homepage: { type: GraphQLString },
-		topics(obj) {
-			return obj.topics;
+		topics: {
+			type: GraphQLList(TopicType)
 		}
 	})
 });
@@ -89,7 +104,6 @@ const RootQuery = new GraphQLObjectType({
 		repos: {
 			type: new GraphQLList(RepoType),
 			resolve(parent, args) {
-				// fetch from api
 				// fetch from api
 				return axios({
 					method: 'GET',
