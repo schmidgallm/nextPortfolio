@@ -20,11 +20,10 @@ const query = gql`
 	}
 `;
 
-const portfolio = (props) => (
+const portfolio = ({ data }) => (
 	<Layout>
 		<View>
-			{console.log(props.data)}
-			<PortfolioHero />
+			<PortfolioHero repos={data} />
 		</View>
 	</Layout>
 );
