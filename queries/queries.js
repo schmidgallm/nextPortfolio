@@ -1,5 +1,5 @@
 import { gql } from 'graphql-tag';
-const getRepos = gql`
+export const getRepos = gql`
 	{
 		repos {
 			name
@@ -13,5 +13,3 @@ const getRepos = gql`
 		}
 	}
 `;
-
-export { getRepos };
