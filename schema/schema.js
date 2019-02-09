@@ -2,16 +2,7 @@
 const dotenv = require('dotenv');
 dotenv.config();
 const graphql = require('graphql');
-const {
-	GraphQLObjectType,
-	GraphQLString,
-	GraphQLSchema,
-	GraphQLID,
-	GraphQLInt,
-	GraphQLList,
-	GraphQLNonNull,
-	GraphQLEnumType
-} = graphql;
+const { GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLID, GraphQLInt, GraphQLList, GraphQLNonNull } = graphql;
 const axios = require('axios');
 
 // TODO
@@ -36,7 +27,6 @@ const TopicType = new GraphQLObjectType({
 		name: {
 			type: GraphQLString,
 			resolve(obj) {
-				console.log(obj);
 				return obj;
 			}
 		}
