@@ -1,6 +1,6 @@
 import { gql } from 'graphql-tag';
 export const getRepos = gql`
-	{
+	query getRepos {
 		repos {
 			name
 			description
