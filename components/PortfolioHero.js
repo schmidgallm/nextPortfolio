@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
-// import getRepos from '../queries/queries';
 
 class PortfolioHero extends Component {
-	getInitialProps() {
-		console.log(props);
-	}
 	render() {
+		console.log(this.props);
 		return (
 			<div className="portfolio container">
 				<div className="row port-row">
