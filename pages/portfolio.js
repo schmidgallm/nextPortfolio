@@ -1,33 +1,34 @@
 import Layout from '../components/Layout';
 import View from '../components/View';
 import PortfolioHero from '../components/PortfolioHero';
-import fetch from 'isomorphic-fetch';
-import ApolloClient from 'apollo-boost';
-import { ApolloProvider } from 'react-apollo';
+import withData from '../lib/with-apollo-client';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
 
-const client = new ApolloClient({
-	uri: process.env.PORT || 'localhost:3000/graphql'
-});
-
-class portfolio extends React.Component {
-	static async getInitialProps({ req }) {
-		const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : '';
-		const response = await fetch(baseUrl + '/repos');
-		const data = await response.json();
-		return { repos: data };
+const query = gql`
+	{
+		repos {
+			name
+			description
+			clone_url
+			stargazers_count
+			homepage
+			topics {
+				name
+			}
+		}
 	}
+`;
 
-	render() {
-		return (
-			<ApolloProvider client={client}>
-				<Layout>
-					<View>
-						<PortfolioHero repos={this.props.repos} />
-					</View>
-				</Layout>
-			</ApolloProvider>
-		);
-	}
-}
+const portfolio = (props) => (
+	<Layout>
+		<View>
+			{console.log(props.data)}
+			<PortfolioHero />
+		</View>
+	</Layout>
+);
 
-export default portfolio;
+const GraphQLIndex = graphql(query)(portfolio);
+
+export default withData(GraphQLIndex);
