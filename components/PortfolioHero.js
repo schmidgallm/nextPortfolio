@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class PortfolioHero extends Component {
 	render() {
-		console.log(this.props);
 		return (
 			<div className="portfolio container">
 				<div className="row port-row">
