@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 
 class PortfolioHero extends Component {
+	static async getInitialProps() {
+		const repos = await this.props;
+		return { repos };
+	}
+
 	render() {
+		const getTopic = (e) => {
+			console.log(e.target.id);
+		};
+
 		return (
 			<div className="portfolio container">
 				<div className="row port-row">
-					<div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+					<div id="react" className="col-lg-3 col-md-4 col-sm-6 text-center port-item" onClick={getTopic}>
 						<i className="fab fa-react" />
 						<h4>React</h4>
 					</div>
