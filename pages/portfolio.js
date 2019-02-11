@@ -28,10 +28,7 @@ const LoadingComponent = loadable(() => import('../components/Loading'));
 
 const portfolio = ({ data }) => (
 	<Layout>
-		<View>
-			{console.log(data)}
-			{data.loading ? <LoadingComponent /> : <PortfolioHero repos={data} />}
-		</View>
+		<View>{data.loading ? <LoadingComponent /> : <PortfolioHero repos={data} />}</View>
 	</Layout>
 );
 
