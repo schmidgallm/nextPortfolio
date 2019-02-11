@@ -12,6 +12,7 @@
 	"author": "Michael Schmidgall",
 	"license": "MIT",
 	"dependencies": {
+		"@loadable/babel-plugin": "^5.6.0",
 		"@loadable/component": "^5.6.0",
 		"apollo-boost": "^0.1.27",
 		"axios": "^0.18.0",
