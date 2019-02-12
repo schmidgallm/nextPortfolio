@@ -6,6 +6,13 @@ class PortfolioHero extends Component {
 		return { repos };
 	}
 
+	constructor(props) {
+		super(props);
+		const repos = this.props.repos.repos;
+		console.log('propsstate', repos);
+		// iterate repos topics arrays...concat all arrays, sort, remove dups, push to state
+	}
+
 	render() {
 		return (
 			<div className="portfolio container-fluid">
