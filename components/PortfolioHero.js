@@ -8,9 +8,26 @@ class PortfolioHero extends Component {
 
 	constructor(props) {
 		super(props);
-		const repos = this.props.repos.repos;
-		console.log('propsstate', repos);
-		// iterate repos topics arrays...concat all arrays, sort, remove dups, push to state
+		this.state = {
+			topics: []
+		};
+		// empty array to hold all non duplicate topics
+		const topics = [];
+		// map props and push topics array in each object if topics does not contain that topic.
+		const repos = this.props.repos.repos.map((repo) => {
+			repo.topics.forEach((topic) => {
+				if (topics.includes(topic.name)) {
+					// do nothing
+				} else {
+					topics.push(topic.name);
+				}
+			});
+			return topics;
+		});
+
+		console.log('topics', topics);
+
+		// at this moment component has not yet mounted so we cannot setState.
 	}
 
 	render() {
