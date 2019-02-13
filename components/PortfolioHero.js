@@ -25,7 +25,7 @@ class PortfolioHero extends Component {
 					topicsArr.push(topic.name);
 				}
 			});
-			return topicsArr;
+			return topicsArr.sort();
 		});
 		// set state to created topicsArr
 		this.setState({ topics: topicsArr });
@@ -36,16 +36,36 @@ class PortfolioHero extends Component {
 			<div className="portfolio container-fluid">
 				{console.log(this.props.repos)}
 				<div className="row">
-					<div className="col col-2 topic-nav">
-						<div className="logo">
+					<div className="topic-nav bg-primary">
+						<div className="inner">
 							<p>Portfolio</p>
+							<hr />
+							{this.state.topics.map((topic) => {
+								return <p className="topic">{topic}</p>;
+							})}
 						</div>
 					</div>
-					<div className="col col-3">
-						<p>test</p>
+					<div className="copy">
+						<div className="inner">
+							<h3>Hello World</h3>
+							<hr />
+							<p>
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi inventore veritatis
+								voluptas excepturi! Dolore ducimus itaque, autem aut distinctio nemo.
+							</p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi inventore veritatis
+							voluptas excepturi! Dolore ducimus itaque, autem aut distinctio nemo.
+							<p>
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi inventore veritatis
+								voluptas excepturi! Dolore ducimus itaque, autem aut distinctio nemo.Lorem ipsum dolor,
+								sit amet consectetur adipisicing elit. Animi inventore veritatis voluptas excepturi!
+								Dolore ducimus itaque, autem aut distinctio nemo.
+							</p>
+						</div>
 					</div>
-					<div className="col col-7">
-						<p>test</p>
+					<div className="showcase">
+						<div className="inner">
+							<h1>Recent Work</h1>
+						</div>
 					</div>
 				</div>
 				<style jsx>{`
@@ -53,16 +73,31 @@ class PortfolioHero extends Component {
 						margin-top: 100px;
 						height: calc(100vh - 100px);
 					}
-					.col {
+					.topic-nav,
+					.copy,
+					.showcase {
 						margin: 0;
 						padding: 0;
 						height: calc(100vh - 100px);
 					}
 					.topic-nav {
-						background-color: whitesmoke;
+						width: 10%;
 					}
-					.logo {
-						border-bottom: 1px solid black;
+					.topic {
+						display: inline-block;
+						background-color: white;
+						margin: 2px;
+						color: black;
+					}
+					.copy {
+						background-color: whitesmoke;
+						width: 20%;
+					}
+					.inner {
+						margin: 20px;
+					}
+					.showcase {
+						width: 70%;
 					}
 				`}</style>
 			</div>
