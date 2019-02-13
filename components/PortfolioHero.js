@@ -11,23 +11,24 @@ class PortfolioHero extends Component {
 		this.state = {
 			topics: []
 		};
+	}
+
+	componentDidMount() {
 		// empty array to hold all non duplicate topics
-		const topics = [];
+		const topicsArr = [];
 		// map props and push topics array in each object if topics does not contain that topic.
-		const repos = this.props.repos.repos.map((repo) => {
+		this.props.repos.repos.map((repo) => {
 			repo.topics.forEach((topic) => {
-				if (topics.includes(topic.name)) {
+				if (topicsArr.includes(topic.name)) {
 					// do nothing
 				} else {
-					topics.push(topic.name);
+					topicsArr.push(topic.name);
 				}
 			});
-			return topics;
+			return topicsArr;
 		});
-
-		console.log('topics', topics);
-
-		// at this moment component has not yet mounted so we cannot setState.
+		// set state to created topicsArr
+		this.setState({ topics: topicsArr });
 	}
 
 	render() {
