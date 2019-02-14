@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Topics from '../components/Topics';
 
 class PortfolioHero extends Component {
 	static async getInitialProps() {
@@ -9,7 +10,9 @@ class PortfolioHero extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			topics: []
+			topics: [],
+			customTopics: [ 'React', 'Apollo', 'Node', 'Express', 'MySQL', 'MongoDB', 'Firebase', 'API', 'WebGL' ],
+			modal: false
 		};
 	}
 
@@ -32,72 +35,57 @@ class PortfolioHero extends Component {
 	}
 
 	render() {
+		const showAllTopics = () => {
+			this.setState({ modal: true });
+		};
 		return (
 			<div className="portfolio container-fluid">
-				{console.log(this.props.repos)}
-				<div className="row">
-					<div className="topic-nav bg-primary">
-						<div className="inner">
-							<p>Portfolio</p>
-							<hr />
-							{this.state.topics.map((topic) => {
-								return <p className="topic">{topic}</p>;
-							})}
-						</div>
-					</div>
-					<div className="copy">
-						<div className="inner">
-							<h3>Hello World</h3>
-							<hr />
-							<p>
-								Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi inventore veritatis
-								voluptas excepturi! Dolore ducimus itaque, autem aut distinctio nemo.
-							</p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi inventore veritatis
-							voluptas excepturi! Dolore ducimus itaque, autem aut distinctio nemo.
-							<p>
-								Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi inventore veritatis
-								voluptas excepturi! Dolore ducimus itaque, autem aut distinctio nemo.Lorem ipsum dolor,
-								sit amet consectetur adipisicing elit. Animi inventore veritatis voluptas excepturi!
-								Dolore ducimus itaque, autem aut distinctio nemo.
-							</p>
-						</div>
-					</div>
-					<div className="showcase">
-						<div className="inner">
-							<h1>Recent Work</h1>
-						</div>
-					</div>
+				<div className="title">
+					<h1>Portfolio Work</h1>
+					<hr />
+				</div>
+				<div className="topic-list">
+					<h4>Popular Work</h4>
+					{this.state.customTopics.map((topic) => {
+						return (
+							<button key={topic} className="btn btn-secondary my-2 mx-2">
+								{topic}
+							</button>
+						);
+					})}
+					<button onClick={showAllTopics} className="d-block btn btn-primary">
+						See More Topics From GitHub
+					</button>
+					{/* {this.state.modal ? null : <Topics />} */}
 				</div>
 				<style jsx>{`
 					.portfolio {
 						margin-top: 100px;
-						height: calc(100vh - 100px);
 					}
-					.topic-nav,
-					.copy,
-					.showcase {
-						margin: 0;
-						padding: 0;
-						height: calc(100vh - 100px);
+					.topic-span {
+						margin: 10px;
+						padding: 2px 5px;
+						border-bottom: 1px solid black;
 					}
-					.topic-nav {
-						width: 10%;
+					.all-topics {
+						display: none;
 					}
-					.topic {
-						display: inline-block;
-						background-color: white;
-						margin: 2px;
-						color: black;
+					.btn-secondary {
+						border-color: #9b8650;
+						background-color: #9b8650;
 					}
-					.copy {
-						background-color: whitesmoke;
-						width: 20%;
+					.btn-secondary:hover {
+						background-color: #837144;
 					}
-					.inner {
-						margin: 20px;
+					.btn-secondary:not(:disabled):not(.disabled):active,
+					.btn-secondary:not(:disabled):not(.disabled).active,
+					.show > .btn-primary.dropdown-toggl {
+						background-color: #9b8650;
+						border-color: #837144;
 					}
-					.showcase {
-						width: 70%;
+					.btn-secondary:focus,
+					.btn-secondary.focus {
+						box-shadow: 0 0 0 0.2rem rgba(131, 113, 68, 0.5);
 					}
 				`}</style>
 			</div>
