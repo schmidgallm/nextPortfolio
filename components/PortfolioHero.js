@@ -16,6 +16,8 @@ class PortfolioHero extends Component {
 		};
 	}
 
+	// git test from home pc
+
 	componentDidMount() {
 		// empty array to hold all non duplicate topics
 		const topicsArr = [];
