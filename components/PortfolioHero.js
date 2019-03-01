@@ -38,14 +38,15 @@ class PortfolioHero extends Component {
 		const showAllTopics = () => {
 			this.setState({ modal: true });
 		};
+		
 		return (
 			<div className="portfolio container-fluid">
 				<div className="title">
 					<h1>Portfolio Work</h1>
 					<hr />
 				</div>
-				<div className="topic-list">
-					<h4>Popular Work</h4>
+				<div className="topic-list text-center">
+					<h4 className="my-3">Popular Search Terms</h4>
 					{this.state.customTopics.map((topic) => {
 						return (
 							<button key={topic} className="btn btn-secondary my-2 mx-2">
@@ -53,7 +54,7 @@ class PortfolioHero extends Component {
 							</button>
 						);
 					})}
-					<button onClick={showAllTopics} className="d-block btn btn-primary">
+					<button onClick={showAllTopics} className="my-3 mx-auto d-block btn btn-primary">
 						See More Topics From GitHub
 					</button>
 					{/* {this.state.modal ? null : <Topics />} */}
