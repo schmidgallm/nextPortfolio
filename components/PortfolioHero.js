@@ -58,7 +58,7 @@ class PortfolioHero extends Component {
 						See More Topics From GitHub
 					</button>
 					{/* {this.state.modal ? null : <Topics />} */}
-				</div>
+			</div>
 				<style jsx>{`
 					.portfolio {
 						margin-top: 100px;
