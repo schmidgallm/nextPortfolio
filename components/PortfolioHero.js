@@ -57,7 +57,6 @@ class PortfolioHero extends Component {
 					<button onClick={showAllTopics} className="my-3 mx-auto d-block btn btn-primary">
 						See More Topics From GitHub
 					</button>
-					{/* {this.state.modal ? null : <Topics />} */}
 			</div>
 				<style jsx>{`
 					.portfolio {
