@@ -11,7 +11,7 @@ class PortfolioHero extends Component {
 		super(props);
 		this.state = {
 			topics: [],
-			customTopics: [ 'React', 'Apollo', 'Node', 'Express', 'MySQL', 'MongoDB', 'Firebase', 'API', 'WebGL' ],
+			customTopics: [ 'React', 'Apollo', 'Node', 'NextJS', 'GraphQL', 'Express', 'MySQL', 'MongoDB', 'API', 'WebGL' ],
 			modal: false
 		};
 	}
@@ -47,6 +47,7 @@ class PortfolioHero extends Component {
 				</div>
 				<div className="topic-list text-center">
 					<h4 className="my-3">Popular Search Terms</h4>
+					<h5 className="my-3">Fun Fact: All terms are generated dynamically using <span className="bold">GitHub API</span></h5>
 					{this.state.customTopics.map((topic) => {
 						return (
 							<button key={topic} className="btn btn-secondary my-2 mx-2">
@@ -57,6 +58,9 @@ class PortfolioHero extends Component {
 					<button onClick={showAllTopics} className="my-3 mx-auto d-block btn btn-primary">
 						See More Topics From GitHub
 					</button>
+					<div className="container my-5">
+						<h1>hellothere</h1>
+					</div>
 			</div>
 				<style jsx>{`
 					.portfolio {
@@ -86,6 +90,10 @@ class PortfolioHero extends Component {
 					.btn-secondary:focus,
 					.btn-secondary.focus {
 						box-shadow: 0 0 0 0.2rem rgba(131, 113, 68, 0.5);
+					}
+					.bold {
+						font-size: 1.4em;
+						border-bottom: 1px solid black;
 					}
 				`}</style>
 			</div>
