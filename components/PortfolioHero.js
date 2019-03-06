@@ -60,7 +60,7 @@ class PortfolioHero extends Component {
 						See More Topics From GitHub
 					</button>
 					<div>
-						{this.state.modal ? (<RepoItems />) : null}
+						{this.state.modal ? (<RepoItems topics={this.state.topics} repos={this.props} />) : null}
 					</div>
 			</div>
 				<style jsx>{`

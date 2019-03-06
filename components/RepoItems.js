@@ -1,10 +1,9 @@
-const RepoItems = () => (
+const RepoItems = props => (
     <div className="repoItems">
         <div>
-            <h1>hellothere</h1>
-            <h1>hellothere</h1>
-            <h1>hellothere</h1>
-            <h1>hellothere</h1>
+            {props.topics.map(topic => {
+               return <button key={topic} className="my-2 mx-2">{topic}</button>
+            })}
         </div>
         <style jsx>{`
             .repoItems {
