@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Topics from '../components/Topics';
+import Topics from './Topics';
+import RepoItems from './RepoItems';
 
 class PortfolioHero extends Component {
 	static async getInitialProps() {
@@ -36,7 +37,7 @@ class PortfolioHero extends Component {
 
 	render() {
 		const showAllTopics = () => {
-			this.setState({ modal: true });
+			this.setState({ modal: !this.state.modal });
 		};
 		
 		return (
@@ -55,9 +56,10 @@ class PortfolioHero extends Component {
 							</button>
 						);
 					})}
-					<button onClick={showAllTopics} className="my-3 mx-auto d-block btn btn-primary">
+					<button id="repo-btn" onClick={showAllTopics} className="my-3 mx-auto d-block btn btn-primary">
 						See More Topics From GitHub
 					</button>
+					{this.state.modal ? <RepoItems /> : 'false'}
 					<div className="container my-5">
 						<h1>hellothere</h1>
 					</div>
