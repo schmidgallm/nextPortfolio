@@ -1,4 +1,4 @@
-const RepoItems = () => {
+const RepoItems = () => (
     <div className="repoItems">
         <div>
             <h1>hellothere</h1>
@@ -12,6 +12,6 @@ const RepoItems = () => {
             }
         `}</style>
     </div>
-}
+)
 
 export default RepoItems;

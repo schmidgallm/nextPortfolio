@@ -36,10 +36,10 @@ class PortfolioHero extends Component {
 	}
 
 	render() {
-		const showAllTopics = () => {
+		const handleStateChange = () => {
 			this.setState({ modal: !this.state.modal });
 		};
-		
+
 		return (
 			<div className="portfolio container-fluid">
 				<div className="title">
@@ -56,12 +56,11 @@ class PortfolioHero extends Component {
 							</button>
 						);
 					})}
-					<button id="repo-btn" onClick={showAllTopics} className="my-3 mx-auto d-block btn btn-primary">
+					<button id="repo-btn" onClick={handleStateChange} className="my-3 mx-auto d-block btn btn-primary">
 						See More Topics From GitHub
 					</button>
-					{this.state.modal ? <RepoItems /> : 'false'}
-					<div className="container my-5">
-						<h1>hellothere</h1>
+					<div>
+						{this.state.modal ? (<RepoItems />) : null}
 					</div>
 			</div>
 				<style jsx>{`
