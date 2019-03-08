@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Topics from '../components/Topics';
+import Topics from './Topics';
+import Toggle from './Toggle';
 
 class PortfolioHero extends Component {
 	static async getInitialProps() {
@@ -53,10 +54,6 @@ class PortfolioHero extends Component {
 							</button>
 						);
 					})}
-					<button onClick={showAllTopics} className="d-block btn btn-primary">
-						See More Topics From GitHub
-					</button>
-					{/* {this.state.modal ? null : <Topics />} */}
 				</div>
 				<style jsx>{`
 					.portfolio {
