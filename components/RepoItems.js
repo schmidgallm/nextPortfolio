@@ -20,12 +20,19 @@ class RepoItems extends Component {
         })
     }
 
+    const renderPopularRepos = () => {
+        
+    }
+
      return (
         <div className="repoItems">
             <div>
                 {this.props.topics.map(topic => {
                    return <button onClick={onTopicClick} key={topic} value={topic} className="my-2 mx-2">{topic}</button>
                 })}
+            </div>
+            <div className="popularRepos">
+                
             </div>
             <style jsx>{`
                 .repoItems {
