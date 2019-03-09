@@ -1,7 +1,10 @@
 const PortItems = props => (
+  <div>
+    {console.log(props)}
     <div>
-        {console.log(props)}
+      <p>hello</p>
     </div>
-)
+  </div>
+);
 
 export default PortItems;
