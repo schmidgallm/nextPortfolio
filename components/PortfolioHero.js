@@ -10,8 +10,7 @@ class PortfolioHero extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      topics: [],
-      modal: false
+      topics: []
     };
   }
 
@@ -58,22 +57,7 @@ class PortfolioHero extends Component {
             <span className="bold">GraphQL</span> from the <span />
             <span className="bold">GitHub API</span>
           </h5>
-          <div className="container-fluid my-5">
-            <div className="row port-row">
-              {this.state.topics.map(topic => {
-                return (
-                  <button
-                    key={topic}
-                    onClick={showRepos}
-                    className="btn btn-primary m-2"
-                  >
-                    {topic}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-          {this.state.modal ? <RepoItems /> : null}
+          <RepoItems topics={this.state.topics} repos={this.props} />
         </div>
         <style jsx>{`
           .portfolio {
