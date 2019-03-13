@@ -9,13 +9,16 @@ class RepoItems extends Component {
   }
 
   render() {
+    // setState to value of button clicked
     const handleStateChange = e => {
       this.setState({ repoItem: e.target.value });
     };
 
-    console.log("working", this.props.repos.repos.repos);
+    // put props.repos into variable for easier use
     const repos = this.props.repos.repos.repos;
+    // init empty array to hold matching repos based on topic value clicked
     const repoList = [];
+    // map through repos variable and if any topic within topics array within repo object matches value of clicked button then push to repoList array
     repos.forEach(repo => {
       repo.topics.forEach(topic => {
         if (topic.name === this.state.repoItem) {
@@ -23,7 +26,6 @@ class RepoItems extends Component {
         }
       });
     });
-    console.log(repoList);
     return (
       <div className="container-fluid my-5">
         <div className="row port-row">
