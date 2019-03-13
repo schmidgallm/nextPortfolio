@@ -53,7 +53,7 @@ class PortfolioHero extends Component {
         <div className="topic-list text-center">
           <h4 className="my-3">Popular Search Terms</h4>
           <h5 className="my-3">
-            Fun Fact: All terms are generated dynamically using{" "}
+            Fun Fact: All terms are generated dynamically using
             <span className="bold">GraphQL</span> from the <span />
             <span className="bold">GitHub API</span>
           </h5>
