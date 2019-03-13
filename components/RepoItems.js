@@ -40,22 +40,43 @@ class RepoItems extends Component {
             );
           })}
         </div>
-        <div className="container my-5 repoItems">
-          <div className="row">
+        <div className="container repoItems">
+          <div className="row port-row">
             {repoList.map(repo => {
               return (
-                <div className="col-lg-3 col-md-4 col-sm-6">
-                  <p>{repo.name}</p>
+                <div className="col-lg-3 col-md-4 col-sm-6 text-center port-item">
+                  <i className="fab fa-react" />
+                  <h4>{repo.name}</h4>
                 </div>
               );
             })}
           </div>
         </div>
         <style jsx>{`
+          .repoItems {
+            margin: 50px auto;
+          }
+          .row {
+            margin: 0 auto;
+          }
           .port-row {
             margin: 0 auto;
             display: flex;
             justify-content: center;
+          }
+          .port-item {
+            background-color: whitesmoke;
+            padding: 30px 20px;
+            cursor: pointer;
+            margin: 10px;
+            border: 1px solid #9b8650;
+          }
+          .port-item:hover {
+            background-color: #9b8650;
+          }
+          i {
+            font-size: 25px;
+            color: black;
           }
         `}</style>
       </div>
