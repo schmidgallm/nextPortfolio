@@ -1,17 +1,25 @@
 import React, { Component } from "react";
+import RepoItemModal from "./RepoItemModal";
 
 class RepoItems extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      repoItem: ""
+      repoItem: "",
+      modal: ""
     };
   }
 
   render() {
     // setState to value of button clicked
     const handleStateChange = e => {
+      document.querySelector(".repoItems").style.display = "block";
       this.setState({ repoItem: e.target.value });
+    };
+
+    const showRepo = repo => {
+      document.querySelector(".repoItems").style.display = "none";
+      this.setState({ modal: repo });
     };
 
     const getFontAwesomeIcon = icon => {
@@ -79,6 +87,8 @@ class RepoItems extends Component {
             {repoList.map(repo => {
               return (
                 <div
+                  value={repo.name}
+                  onClick={() => showRepo(repo)}
                   key={repo.name}
                   className="col-lg-3 col-md-4 col-sm-6 text-center port-item"
                 >
@@ -88,6 +98,9 @@ class RepoItems extends Component {
               );
             })}
           </div>
+        </div>
+        <div className="container">
+          {this.state.modal ? <RepoItemModal repo={this.state.modal} /> : null}
         </div>
         <style jsx>{`
           .repoItems {
@@ -114,6 +127,9 @@ class RepoItems extends Component {
           i {
             font-size: 25px;
             color: black;
+          }
+          .lead {
+            color: #000;
           }
         `}</style>
       </div>
