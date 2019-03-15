@@ -18,7 +18,6 @@ class RepoItems extends Component {
     };
 
     const showRepo = repo => {
-      document.querySelector(".repoItems").style.display = "none";
       this.setState({ modal: repo });
     };
 
@@ -94,12 +93,29 @@ class RepoItems extends Component {
                 >
                   <i className={getFontAwesomeIcon(this.state.repoItem)} />
                   <h4>{repo.name}</h4>
+                  <p>{repo.description}</p>
+                  <div className="icons">
+                    <div className="icon">
+                      <a href={repo.clone_url}>
+                        <i className="fab fa-github" />
+                        <p>Github</p>
+                      </a>
+                    </div>
+                    <div className="icon">
+                      {repo.homepage ? (
+                        <a href={repo.homepage}>
+                          <i className="fas fa-laptop-code" />
+                          <p>Hosted Site</p>
+                        </a>
+                      ) : null}
+                    </div>
+                  </div>
                 </div>
               );
             })}
           </div>
         </div>
-        <div className="container">
+        <div className="container repoItemModal">
           {this.state.modal ? <RepoItemModal repo={this.state.modal} /> : null}
         </div>
         <style jsx>{`
@@ -130,6 +146,15 @@ class RepoItems extends Component {
           }
           .lead {
             color: #000;
+          }
+          .icons {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+          }
+          .icon a i {
+            cursor: pointer;
+            font-size: 30px;
           }
         `}</style>
       </div>
