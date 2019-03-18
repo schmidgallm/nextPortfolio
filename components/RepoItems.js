@@ -10,6 +10,9 @@ class RepoItems extends Component {
     };
   }
 
+  // todo
+  // MAKE CODE BETTER! THIS IS SPAGHETTI CODE
+
   render() {
     // setState to value of button clicked
     const handleStateChange = e => {
