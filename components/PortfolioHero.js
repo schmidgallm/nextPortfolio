@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import RepoItems from "./RepoItems";
+import PopularWork from "./PopularWork";
 
 class PortfolioHero extends Component {
   static async getInitialProps() {
@@ -50,6 +51,7 @@ class PortfolioHero extends Component {
           <h1>Portfolio Work</h1>
           <hr />
         </div>
+        <PopularWork />
         <div className="topic-list text-center">
           <h4 className="my-3">Popular Search Terms</h4>
           <h5 className="my-3">
